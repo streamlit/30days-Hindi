@@ -8,7 +8,7 @@
 
 भाग लेने के लिए आपको केवल एक कंप्यूटर, पायथन की बुनियादी समझ और आपकी जिज्ञासा की आवश्यकता है। 🧠
 
-स्ट्रीमलिट के [ट्विटर] (https://twitter.com/streamlit) और [लिंक्डइन] (https://www.linkedin.com/company/streamlit/posts/?feedView=all) खातों के माध्यम से प्रतिदिन एक नई चुनौती जारी की जाती है। साथ ही [`#30DaysOfStreamlit` ऐप](https://share.streamlit.io/streamlit/30days/)।
+स्ट्रीमलिट के [ट्विटर](https://twitter.com/streamlit) और [लिंक्डइन](https://www.linkedin.com/company/streamlit/posts/?feedView=all) खातों के माध्यम से प्रतिदिन एक नई चुनौती जारी की जाती है। साथ ही [`#30DaysOfStreamlit` ऐप](https://30days-in-hindi.streamlit.app/)।
 
 [![Streamlit ऐप](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/streamlit/30days/)
 
@@ -26,7 +26,7 @@
 
 यदि डेटा ऐप्स बनाने के सबसे तेज़ और आसान तरीके से गति प्राप्त करना पहले से ही गर्मियों का सबसे अच्छा उपहार नहीं है, तो आप Streamlit उपहार भी जीत सकते हैं!
 
-दैनिक चुनौतियों को पूरा करें, [ट्विटर] (https://twitter.com/streamlit) या [लिंक्डइन] (https://www.linkedin.com/company/streamlit/posts/?feedView=all) पर अपने समाधान हमारे साथ साझा करें ), और कूल Streamlit स्वैग से पुरस्कृत हों! 🎁
+दैनिक चुनौतियों को पूरा करें, [ट्विटर](https://twitter.com/streamlit) या [लिंक्डइन](https://www.linkedin.com/company/streamlit/posts/?feedView=all) पर अपने समाधान हमारे साथ साझा करें ), और कूल Streamlit स्वैग से पुरस्कृत हों! 🎁
 
 ## संसाधन
 
@@ -43,5 +43,5 @@
 - 🇬🇧 [अंग्रेजी](https://github.com/streamlit/30days) (आधिकारिक): [![स्ट्रीमलिट के 30 दिन](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]( https://30days.streamlit.app)
 - 🇫🇷 [फ्रेंच](https://github.com/streamlit/30days-French) ([चार्ली वार्गनियर](https://github.com/charlyWargnier/) द्वारा): [![30 डेज़ ऑफ़ स्ट्रीमलिट एन फ़्रैंकैस !](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-french.streamlit.app/)
 - 🇪🇸 [Español](https://github.com/streamlit/30days-spanish/) ([एमिलियानो रोसो](https://github.com/arraydude) द्वारा): [![30 Dias de Streamlit]( https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-spanish.streamlit.app/)
-- 🇵🇹 [पुर्तगाली](https://github.com/franciscoed/30days) ([franciscoed](https://github.com/franciscoed) द्वारा): [![30 Dias de Streamlit](https:// static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30dias.streamlit.app/)
+- 🇵🇹 [पुर्तगाली](https://github.com/franciscoed/30days) (([फ़्रांसिस्को](https://github.com/franciscoed) द्वारा): [![30 Dias de Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30dias.streamlit.app/)
 
