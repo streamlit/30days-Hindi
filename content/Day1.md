@@ -21,8 +21,6 @@ conda create -n stenv python=3.9
 
 ## **conda इन्वायरमेंट सक्रिय करना**
 
-To use a conda environment that we had just created that is named `stenv`, enter the following into the command line:
-
 `stenv` नामक हमारे द्वारा अभी-अभी बनाए गए conda इन्वायरमेंट का उपयोग करने के लिए, कमांड लाइन में निम्नलिखित दर्ज करें:
 
 ```bash
