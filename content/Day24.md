@@ -128,7 +128,6 @@ b1 = time()
 st.info(b1-b0)
 ```
 
-Notice how the first run may provide roughly similar run time. Reload the app and notice how the run time changes when using the `st.cache` decorator. Did you observe any speed increase?
 ध्यान दें कि पहला रन लगभग समान रन टाइम कैसे प्रदान कर सकता है|
 ऐप को फिर से लोड करें और ध्यान दें कि `st.cache` डेकोरेटर का उपयोग करते समय रन टाइम कैसे बदलता है|
 क्या आपने गति में कोई वृद्धि देखी?
