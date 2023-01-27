@@ -74,8 +74,6 @@ with st.expander('About this app'):
   st.image('https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png', width=250)
 ```
 
-Input widgets for accepting user input is placed in the sidebar as specified by using the `st.sidebar` command before the Streamlit commands `text_input` and `selectbox`. Input values entered or selected by the user are assigned and stored in the `user_name`, `user_emoji` and `user_food` variables.
-
 यूज़र इनपुट को स्वीकार करने के लिए इनपुट विजेट्स को साइडबार में रखा गया है जैसा कि Streamlit कमांड्स `st.sidebar` और `text_input` से पहले `selectbox` कमांड का उपयोग करके निर्दिष्ट किया गया है| यूज़र द्वारा दर्ज किए गए या चुने गए इनपुट मान `user_name`, `user_emoji` और `user_food` वेरिएबल्स में असाइन किए जाते हैं और संग्रहीत किए जाते हैं|
 ```python
 st.sidebar.header('Input')
