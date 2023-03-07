@@ -36,18 +36,18 @@ pip install streamlit-elements==0.1.*
 ## लाइन-बाय-लाइन स्पष्टीकरण के साथ कोड
 
 ```python
-# First, we will need the following imports for our application.
+# सबसे पहले, हमें अपने ऐप्लिकेशन के लिए निम्नलिखित इम्पोर्ट की आवश्यकता होगी.
 
 import json
 import streamlit as st
 from pathlib import Path
 
-# As for Streamlit Elements, we will need all these objects.
-# All available objects and there usage are listed there: https://github.com/okld/streamlit-elements#getting-started
+# Streamlit एलिमेंट्स के लिए, हमें इन सभी ऑब्जेक्ट्स की आवश्यकता होगी.
+# सभी उपलब्ध ऑब्जेक्ट्स और उनका उपयोग वहां सूचीबद्ध है: https://github.com/okld/streamlit-elements#getting-started
 
 from streamlit_elements import elements, dashboard, mui, editor, media, lazy, sync, nivo
 
-# Change page layout to make the dashboard take the whole page.
+# डैशबोर्ड को पूरे पेज पर ले जाने के लिए पेज लेआउट बदलें.
 
 st.set_page_config(layout="wide")
 
@@ -57,109 +57,109 @@ with st.sidebar:
     st.write("Build a draggable and resizable dashboard with Streamlit Elements.")
     st.write("---")
 
-    # Define URL for media player.
+    # मीडिया प्लेयर के लिए URL परिभाषित करें.
     media_url = st.text_input("Media URL", value="https://www.youtube.com/watch?v=vIQQR_yq-8I")
 
-# Initialize default data for code editor and chart.
+# कोड एडिटर और चार्ट के लिए डिफ़ॉल्ट डेटा को इनिशियलाइज़ करें.
 #
-# For this tutorial, we will need data for a Nivo Bump chart.
-# You can get random data there, in tab 'data': https://nivo.rocks/bump/
+# इस ट्यूटोरियल के लिए, हमें Nivo Bump चार्ट के लिए डेटा की आवश्यकता होगी.
+# आप वहां रैंडम डेटा प्राप्त कर सकते हैं, टैब 'डेटा' में: https://nivo.rocks/bump/
 #
-# As you will see below, this session state item will be updated when our
-# code editor change, and it will be read by Nivo Bump chart to draw the data.
+# जैसा कि आप नीचे देखेंगे, हमारे कोड एडिटर में परिवर्तन होने पर यह सेशन स्टेट आइटम अपडेट हो जाएगा, 
+# और इसे डेटा निकालने के लिए Nivo Bump चार्ट द्वारा पढ़ा जाएगा.
 
 if "data" not in st.session_state:
     st.session_state.data = Path("data.json").read_text()
 
-# Define a default dashboard layout.
+# एक डिफ़ॉल्ट डैशबोर्ड लेआउट परिभाषित करें.
 # Dashboard grid has 12 columns by default.
 #
-# For more information on available parameters:
-# https://github.com/react-grid-layout/react-grid-layout#grid-item-props
+# उपलब्ध मापदंडों के बारे में अधिक जानकारी के लिए:
+# https://github.com/react-grid-layout/react-grid-layout#grid-item-props.
 
 layout = [
-    # Editor item is positioned in coordinates x=0 and y=0, and takes 6/12 columns and has a height of 3.
+    # एडिटर आइटम निर्देशांक x=0 और y=0 में स्थित है, और 6/12 कॉलम लेता है और इसकी ऊंचाई 3 है.
     dashboard.Item("editor", 0, 0, 6, 3),
-    # Chart item is positioned in coordinates x=6 and y=0, and takes 6/12 columns and has a height of 3.
+    # चार्ट आइटम निर्देशांक x=6 और y=0 में स्थित है, और 6/12 कॉलम लेता है और इसकी ऊंचाई 3 है.
     dashboard.Item("chart", 6, 0, 6, 3),
-    # Media item is positioned in coordinates x=0 and y=3, and takes 6/12 columns and has a height of 4.
+    # मीडिया आइटम निर्देशांक x=0 और y=3 में स्थित है, और 6/12 कॉलम लेता है और इसकी ऊंचाई 4 है.
     dashboard.Item("media", 0, 2, 12, 4),
 ]
 
-# Create a frame to display elements.
+# एलिमेंट्स को प्रदर्शित करने के लिए एक फ़्रेम बनाएं.
 
 with elements("demo"):
 
-    # Create a new dashboard with the layout specified above.
+    # ऊपर बताए गए लेआउट के साथ नया डैशबोर्ड बनाएं.
     #
-    # draggableHandle is a CSS query selector to define the draggable part of each dashboard item.
-    # Here, elements with a 'draggable' class name will be draggable.
-    #
-    # For more information on available parameters for dashboard grid:
+    # 
+    # यहां, 'ड्रैगेबल' क्लास नाम वाले एलिमेंट्स ड्रैगेबल होंगे.
+    # draggableHandle प्रत्येक डैशबोर्ड आइटम के ड्रैग करने योग्य हिस्से को परिभाषित करने के लिए एक CSS क्वेरी चयनकर्ता है.
+    # डैशबोर्ड ग्रिड के लिए उपलब्ध पैरामीटर पर अधिक जानकारी के लिए:
     # https://github.com/react-grid-layout/react-grid-layout#grid-layout-props
     # https://github.com/react-grid-layout/react-grid-layout#responsive-grid-layout-props
 
     with dashboard.Grid(layout, draggableHandle=".draggable"):
 
-        # First card, the code editor.
+        # पहला कार्ड, कोड एडिटर.
         #
-        # We use the 'key' parameter to identify the correct dashboard item.
+        # हम सही डैशबोर्ड आइटम की पहचान करने के लिए 'की' पैरामीटर का उपयोग करते हैं.
         #
-        # To make card's content automatically fill the height available, we will use CSS flexbox.
-        # sx is a parameter available with every Material UI widget to define CSS attributes.
+        # उपलब्ध ऊंचाई में कार्ड की सामग्री को स्वचालित रूप से भरने के लिए, हम CSS flexbox का उपयोग करेंगे.
+        # CSS विशेषताओं को परिभाषित करने के लिए sx प्रत्येक सामग्री UI विजेट के साथ उपलब्ध एक पैरामीटर है.
         #
-        # For more information regarding Card, flexbox and sx:
+        # कार्ड, flexbox और sx के बारे में अधिक जानकारी के लिए:
         # https://mui.com/components/cards/
         # https://mui.com/system/flexbox/
         # https://mui.com/system/the-sx-prop/
 
         with mui.Card(key="editor", sx={"display": "flex", "flexDirection": "column"}):
 
-            # To make this header draggable, we just need to set its classname to 'draggable',
-            # as defined above in dashboard.Grid's draggableHandle.
+            # इस हेडर को ड्रैगेबल बनाने के लिए, हमें इसके क्लास नाम को 'ड्रैगेबल' पर सेट करने की आवश्यकता है, जैसा कि
+            # डैशबोर्ड में ऊपर परिभाषित किया गया है. Grid का draggableHandle.
 
             mui.CardHeader(title="Editor", className="draggable")
 
-            # We want to make card's content take all the height available by setting flex CSS value to 1.
-            # We also want card's content to shrink when the card is shrinked by setting minHeight to 0.
+            # हम flex CSS मान को 1 पर सेट करके कार्ड की सामग्री को उपलब्ध सभी ऊंचाई तक ले जाना चाहते हैं.
+            # हम यह भी चाहते हैं कि minHeight को 0 पर सेट करके कार्ड के सिकुड़ने पर कार्ड की सामग्री भी सिकुड़ जाए.
 
             with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
 
-                # Here is our Monaco code editor.
+                # यह रहा हमारा Monaco कोड एडिटर.
                 #
-                # First, we set the default value to st.session_state.data that we initialized above.
-                # Second, we define the language to use, JSON here.
+                # सबसे पहले, हम डिफ़ॉल्ट मान को st.session_state.data पर सेट करते हैं जिसे हमने ऊपर इनिशियलाइज़ किया था.
+                # दूसरा, हम उपयोग करने के लिए भाषा परिभाषित करते हैं, यहां JSON.
                 #
-                # Then, we want to retrieve changes made to editor's content.
-                # By checking Monaco documentation, there is an onChange property that takes a function.
-                # This function is called everytime a change is made, and the updated content value is passed in
-                # the first parameter (cf. onChange: https://github.com/suren-atoyan/monaco-react#props)
+                # फिर, हम एडिटर की सामग्री में किए गए परिवर्तनों को पुनः प्राप्त करना चाहते हैं.
+                # Monaco दस्तावेज़ों की जांच करके, एक onChange प्रॉपर्टी है जो काम करती है.
+                # हर बार बदलाव किए जाने पर इस फ़ंक्शन को कॉल किया जाता है, और अपडेट किए गए सामग्री मान को पहले
+                # पैरामीटर में पास किया जाता है (cf. onChange: https://github.com/suren-atoyan/monaco-react#props)
                 #
-                # Streamlit Elements provide a special sync() function. This function creates a callback that will
-                # automatically forward its parameters to Streamlit's session state items.
+                # Streamlit एलिमेंट्स एक विशेष सिंक () फ़ंक्शन प्रदान करते हैं. 
+                # यह फ़ंक्शन एक कॉलबैक बनाता है जो स्वचालित रूप से इसके पैरामीटर को Streamlit के सेशन स्टेट आइटम में फॉरवर्ड करेगा.
                 #
-                # Examples
+                # उदाहरण
                 # --------
-                # Create a callback that forwards its first parameter to a session state item called "data":
+                # एक कॉलबैक बनाएं जो "डेटा" नामक सेशन स्टेट आइटम के लिए अपना पहला पैरामीटर फॉरवर्ड करता है:
                 # >>> editor.Monaco(onChange=sync("data"))
                 # >>> print(st.session_state.data)
                 #
-                # Create a callback that forwards its second parameter to a session state item called "ev":
+                # एक कॉलबैक बनाएं जो इसके दूसरे पैरामीटर को "ev" नामक सेशन स्टेट आइटम पर फॉरवर्ड करता है:
                 # >>> editor.Monaco(onChange=sync(None, "ev"))
                 # >>> print(st.session_state.ev)
                 #
-                # Create a callback that forwards both of its parameters to session state:
+                # एक कॉलबैक बनाएँ जो इसके दोनों मापदंडों को सेशन स्टेट में फॉरवर्ड करता है:
                 # >>> editor.Monaco(onChange=sync("data", "ev"))
                 # >>> print(st.session_state.data)
                 # >>> print(st.session_state.ev)
                 #
-                # Now, there is an issue: onChange is called everytime a change is made, which means everytime
-                # you type a single character, your entire Streamlit app will rerun.
+                # अब, एक समस्या है: परिवर्तन किए जाने पर हर बार onChange कॉल किया जाता है, जिसका अर्थ है कि हर बार जब आप
+                # एक ही वर्ण टाइप करते हैं, तो आपका संपूर्ण Streamlit ऐप फिर से चालू हो जाएगा.
                 #
-                # To avoid this issue, you can tell Streamlit Elements to wait for another event to occur
-                # (like a button click) to send the updated data, by wrapping your callback with lazy().
+                # इस समस्या से बचने के लिए, आप अपने कॉलबैक को लेज़ी() के साथ रैपिंग करके अपडेट किए गए डेटा को भेजने के लिए
+                # Streamlit एलिमेंट्स को किसी अन्य ईवेंट के होने की प्रतीक्षा करने के लिए कह सकते हैं (जैसे एक बटन क्लिक).
                 #
-                # For more information on available parameters for Monaco:
+                # Monaco के लिए उपलब्ध मापदंडों के बारे में अधिक जानकारी के लिए:
                 # https://github.com/suren-atoyan/monaco-react
                 # https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneEditorConstructionOptions.html
 
@@ -171,43 +171,43 @@ with elements("demo"):
 
             with mui.CardActions:
 
-                # Monaco editor has a lazy callback bound to onChange, which means that even if you change
-                # Monaco's content, Streamlit won't be notified directly, thus won't reload everytime.
-                # So we need another non-lazy event to trigger an update.
+                # Monaco एडिटर के पास onChange के लिए एक लेज़ी कॉलबैक है, जिसका अर्थ है कि भले ही आप Monaco की
+                # सामग्री को बदलते हैं, Streamlit को सीधे अधिसूचित नहीं किया जाएगा, इस प्रकार हर बार पुनः लोड नहीं होगा.
+                # इसलिए हमें अपडेट को ट्रिगर करने के लिए एक और नॉन-लेज़ी इवेंटकी ज़रूरत है.
                 #
-                # The solution is to create a button that fires a callback on click.
-                # Our callback doesn't need to do anything in particular. You can either create an empty
-                # Python function, or use sync() with no argument.
+                # समाधान एक ऐसा बटन बनाना है जो क्लिक करने पर कॉलबैक को सक्रिय करता है.
+                # हमारे कॉलबैक को विशेष रूप से कुछ भी करने की ज़रूरत नहीं है.
+                # आप या तो एक खाली Python फ़ंक्शन बना सकते हैं या बिना किसी तर्क के सिंक () का उपयोग कर सकते हैं.
                 #
-                # Now, everytime you will click that button, onClick callback will be fired, but every other
-                # lazy callbacks that changed in the meantime will also be called.
+                # अब, जब भी आप उस बटन पर क्लिक करेंगे, onClick कॉलबैक सक्रिय कर दिया जाएगा, 
+                # लेकिन इस दौरान बदले गए हर दूसरे लेज़ी कॉलबैक को भी कॉल किया जाएगा.
 
                 mui.Button("Apply changes", onClick=sync())
 
-        # Second card, the Nivo Bump chart.
-        # We will use the same flexbox configuration as the first card to auto adjust the content height.
+        # दूसरा कार्ड, Nivo Bump चार्ट.
+        # हम सामग्री की ऊंचाई को स्वतः समायोजित करने के लिए पहले कार्ड के समान flexbox कॉन्फ़िगरेशन का उपयोग करेंगे.
 
         with mui.Card(key="chart", sx={"display": "flex", "flexDirection": "column"}):
 
-            # To make this header draggable, we just need to set its classname to 'draggable',
-            # as defined above in dashboard.Grid's draggableHandle.
+            # इस हेडर को ड्रैगेबल बनाने के लिए, हमें इसके क्लास नाम को 'ड्रैगेबल' पर सेट करने की आवश्यकता है,
+            # जैसा कि डैशबोर्ड में ऊपर परिभाषित किया गया है. Grid का draggableHandle.
 
             mui.CardHeader(title="Chart", className="draggable")
 
-            # Like above, we want to make our content grow and shrink as the user resizes the card,
-            # by setting flex to 1 and minHeight to 0.
+            # ऊपर की तरह, हम flex को 1 और minHeight को 0 पर सेट करके उपयोगकर्ता द्वारा कार्ड का आकार बदलने
+            # पर अपनी सामग्री को बढ़ाना और सिकोड़ना चाहते हैं.
 
             with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
 
-                # This is where we will draw our Bump chart.
+                # यहीं पर हम अपना Bump चार्ट बनाएंगे.
                 #
-                # For this exercise, we can just adapt Nivo's example and make it work with Streamlit Elements.
-                # Nivo's example is available in the 'code' tab there: https://nivo.rocks/bump/
+                # इस अभ्यास के लिए, हम बस Nivo के उदाहरण को अनुकूलित कर सकते हैं और इसे Streamlit एलिमेंट्स के साथ काम करने योग्य बना सकते हैं.
+                # Nivo का उदाहरण वहां 'कोड' टैब में उपलब्ध है: https://nivo.rocks/bump/
                 #
-                # Data takes a dictionary as parameter, so we need to convert our JSON data from a string to
-                # a Python dictionary first, with `json.loads()`.
+                # डेटा एक डिक्शनरी को पैरामीटर के रूप में लेता है, इसलिए हमें अपने JSON डेटा को पहले एक स्ट्रिंग से
+                # Python डिक्शनरी में `json.loads()` के साथ बदलने की आवश्यकता है.
                 #
-                # For more information regarding other available Nivo charts:
+                # अन्य उपलब्ध Nivo चार्ट्स के बारे में अधिक जानकारी के लिए:
                 # https://nivo.rocks/
 
                 nivo.Bump(
@@ -252,14 +252,14 @@ with elements("demo"):
                     axisRight=None,
                 )
 
-        # Third element of the dashboard, the Media player.
+        # डैशबोर्ड का तीसरा एलिमेंट, मीडिया प्लेयर.
 
         with mui.Card(key="media", sx={"display": "flex", "flexDirection": "column"}):
             mui.CardHeader(title="Media Player", className="draggable")
             with mui.CardContent(sx={"flex": 1, "minHeight": 0}):
 
-                # This element is powered by ReactPlayer, it supports many more players other
-                # than YouTube. You can check it out there: https://github.com/cookpete/react-player#props
+                # यह एलिमेंट ReactPlayer द्वारा संचालित है, यह YouTube के अलावा और भी कई प्लेयर को सपोर्ट करता है.
+                # आप इसे वहां देख सकते हैं: https://github.com/cookpete/react-player#props
 
                 media.Player(url=media_url, width="100%", height="100%", controls=True)
 
