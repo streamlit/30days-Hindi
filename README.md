@@ -10,7 +10,7 @@
 
 स्ट्रीमलिट के [ट्विटर](https://twitter.com/streamlit) और [लिंक्डइन](https://www.linkedin.com/company/streamlit/posts/?feedView=all) खातों के माध्यम से प्रतिदिन एक नई चुनौती जारी की जाती है। साथ ही [`#30DaysOfStreamlit` ऐप](https://30days-in-hindi.streamlit.app/)।
 
-[![Streamlit ऐप](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-hindi.streamlit.app//)
+[![Streamlit ऐप](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-hindi.streamlit.app/)
 
 दैनिक चुनौतियों को पूरा करें, ट्विटर या लिंक्डइन पर हमारे साथ अपने समाधान साझा करें, और कूल स्ट्रीमलिट स्वैग से पुरस्कृत हों! 😎
 
