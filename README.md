@@ -44,4 +44,7 @@
 - [फ्रेंच](https://github.com/streamlit/30days-French) ([चार्ली वार्गनियर](https://github.com/charlyWargnier/) द्वारा): [![30 डेज़ ऑफ़ स्ट्रीमलिट एन फ़्रैंकैस !](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-french.streamlit.app/)
 - [Español](https://github.com/streamlit/30days-spanish/) ([एमिलियानो रोसो](https://github.com/arraydude) द्वारा): [![30 Dias de Streamlit]( https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-spanish.streamlit.app/)
 - [पुर्तगाली](https://github.com/franciscoed/30days) (([फ़्रांसिस्को](https://github.com/franciscoed) द्वारा): [![30 Dias de Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30dias.streamlit.app/)
+- [चीनी](https://github.com/TeddyHuang-00/30days-Chinese) ([टेडी हुआंग-00](https://github.com/TeddyHuang-00) द्वार): [![30 天学 Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-chinese.streamlit.app)
+- [पॉलिश](https://github.com/streamlit/30days-polish) ([माइकल नोवोटका](https://github.com/sfc-gh-mnowotka) द्वार): [![Streamlit w 30 dni po Polsku](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://w30dni.streamlit.app/)
+- [रूसी](https://github.com/kseniaanske/30days) ([केन्सिया अंसके](https://github.com/kseniaanske) द्वार): [![30 Дней Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://30days-in-russian.streamlit.app/)
 
